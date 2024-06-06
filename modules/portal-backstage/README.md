@@ -42,13 +42,15 @@ This module deploys the [Humanitec Reference Architecture Backstage](https://git
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | cloud\_provider | Used cloud provider. Possible values: aws, azure, gcp | `string` | n/a | yes |
-| github\_app\_client\_id\_ref | GitHub App Client ID (Secret Store reference) | <pre>object({<br>    ref     = string<br>    store   = string<br>    value   = string<br>    version = string<br>  })</pre> | n/a | yes |
-| github\_app\_client\_secret\_ref | GitHub App Client Secret (Secret Store reference) | <pre>object({<br>    ref     = string<br>    store   = string<br>    value   = string<br>    version = string<br>  })</pre> | n/a | yes |
+| github\_app\_client\_id\_ref | GitHub App Client ID (Secret Store reference) | <pre>object({<br>    ref     = optional(string)<br>    store   = optional(string)<br>    value   = optional(string)<br>    version = optional(string)<br>  })</pre> | n/a | yes |
+| github\_app\_client\_secret\_ref | GitHub App Client Secret (Secret Store reference) | <pre>object({<br>    ref     = optional(string)<br>    store   = optional(string)<br>    value   = optional(string)<br>    version = optional(string)<br>  })</pre> | n/a | yes |
 | github\_app\_id | GitHub App ID | `string` | n/a | yes |
-| github\_app\_private\_key\_ref | GitHub App Private Key (Secret Store reference) | <pre>object({<br>    ref     = string<br>    store   = string<br>    value   = string<br>    version = string<br>  })</pre> | n/a | yes |
+| github\_app\_private\_key\_ref | GitHub App Private Key (Secret Store reference) | <pre>object({<br>    ref     = optional(string)<br>    store   = optional(string)<br>    value   = optional(string)<br>    version = optional(string)<br>  })</pre> | n/a | yes |
 | github\_org\_id | GitHub org id | `string` | n/a | yes |
-| github\_webhook\_secret\_ref | GitHub Webhook Secret (Secret Store reference) | <pre>object({<br>    ref     = string<br>    store   = string<br>    value   = string<br>    version = string<br>  })</pre> | n/a | yes |
+| github\_webhook\_secret\_ref | GitHub Webhook Secret (Secret Store reference) | <pre>object({<br>    ref     = optional(string)<br>    store   = optional(string)<br>    value   = optional(string)<br>    version = optional(string)<br>  })</pre> | n/a | yes |
 | humanitec\_app\_id | Humanitec Application ID | `string` | n/a | yes |
-| humanitec\_ci\_service\_user\_token\_ref | Humanitec CI Service User Token (Secret Store reference) | <pre>object({<br>    ref     = string<br>    store   = string<br>    value   = string<br>    version = string<br>  })</pre> | n/a | yes |
+| humanitec\_ci\_service\_user\_token\_ref | Humanitec CI Service User Token (Secret Store reference) | <pre>object({<br>    ref     = optional(string)<br>    store   = optional(string)<br>    value   = optional(string)<br>    version = optional(string)<br>  })</pre> | n/a | yes |
 | humanitec\_org\_id | Humanitec Organization ID | `string` | n/a | yes |
+| backstage\_template\_owner | Backstage template owner | `string` | `"humanitec-architecture"` | no |
+| backstage\_template\_repository | Backstage template repository | `string` | `"backstage"` | no |
 <!-- END_TF_DOCS -->

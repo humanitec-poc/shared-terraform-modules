@@ -1,4 +1,10 @@
 
+# Backstage template owner
+backstage_template_owner = "humanitec-architecture"
+
+# Backstage template repository
+backstage_template_repository = "backstage"
+
 # Used cloud provider. Possible values: aws, azure, gcp
 cloud_provider = ""
 

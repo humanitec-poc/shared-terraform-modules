@@ -11,7 +11,7 @@ resource "github_repository" "backstage" {
   visibility = "public"
 
   template {
-    owner      = "humanitec-architecture"
-    repository = "backstage"
+    owner      = var.backstage_template_owner
+    repository = var.backstage_template_repository
   }
 }
