@@ -20,7 +20,7 @@ resource "humanitec_value" "backstage_github_app_client_id" {
   app_id      = var.humanitec_app_id
   key         = "GITHUB_APP_CLIENT_ID"
   description = ""
-  value       = var.github_app_client_id
+  secret_ref  = var.github_app_client_id_ref
   is_secret   = true
 }
 
@@ -28,7 +28,7 @@ resource "humanitec_value" "backstage_github_app_client_secret" {
   app_id      = var.humanitec_app_id
   key         = "GITHUB_APP_CLIENT_SECRET"
   description = ""
-  value       = var.github_app_client_secret
+  secret_ref  = var.github_app_client_secret_ref
   is_secret   = true
 }
 
@@ -36,7 +36,7 @@ resource "humanitec_value" "backstage_github_app_private_key" {
   app_id      = var.humanitec_app_id
   key         = "GITHUB_APP_PRIVATE_KEY"
   description = ""
-  value       = indent(2, var.github_app_private_key)
+  secret_ref  = var.github_app_private_key_ref
   is_secret   = true
 }
 
@@ -44,7 +44,7 @@ resource "humanitec_value" "backstage_github_app_webhook_secret" {
   app_id      = var.humanitec_app_id
   key         = "GITHUB_APP_WEBHOOK_SECRET"
   description = ""
-  value       = var.github_webhook_secret
+  secret_ref  = var.github_webhook_secret_ref
   is_secret   = true
 }
 
@@ -60,7 +60,7 @@ resource "humanitec_value" "backstage_humanitec_token" {
   app_id      = var.humanitec_app_id
   key         = "HUMANITEC_TOKEN"
   description = ""
-  value       = var.humanitec_ci_service_user_token
+  secret_ref  = var.humanitec_ci_service_user_token_ref
   is_secret   = true
 }
 
@@ -70,18 +70,4 @@ resource "humanitec_value" "backstage_cloud_provider" {
   description = ""
   value       = var.cloud_provider
   is_secret   = false
-}
-
-resource "random_bytes" "backstage_service_to_service_auth_key" {
-  length = 24
-}
-
-resource "humanitec_value" "app_config_backend_auth_keys" {
-  app_id      = var.humanitec_app_id
-  key         = "APP_CONFIG_backend_auth_keys"
-  description = "Backstage service-to-service-auth keys"
-  value = jsonencode([{
-    secret = random_bytes.backstage_service_to_service_auth_key.base64
-  }])
-  is_secret = true
 }

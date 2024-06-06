@@ -21,14 +21,12 @@ This module deploys the [Humanitec Reference Architecture Backstage](https://git
 |------|---------|
 | github | ~> 5.38 |
 | humanitec | ~> 1.0 |
-| random | ~> 3.5 |
 
 ### Resources
 
 | Name | Type |
 |------|------|
 | [github_repository.backstage](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository) | resource |
-| [humanitec_value.app_config_backend_auth_keys](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/value) | resource |
 | [humanitec_value.backstage_cloud_provider](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/value) | resource |
 | [humanitec_value.backstage_github_app_client_id](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/value) | resource |
 | [humanitec_value.backstage_github_app_client_secret](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/value) | resource |
@@ -38,20 +36,19 @@ This module deploys the [Humanitec Reference Architecture Backstage](https://git
 | [humanitec_value.backstage_github_org_id](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/value) | resource |
 | [humanitec_value.backstage_humanitec_org](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/value) | resource |
 | [humanitec_value.backstage_humanitec_token](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/value) | resource |
-| [random_bytes.backstage_service_to_service_auth_key](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/bytes) | resource |
 
 ### Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | cloud\_provider | Used cloud provider. Possible values: aws, azure, gcp | `string` | n/a | yes |
-| github\_app\_client\_id | GitHub App Client ID | `string` | n/a | yes |
-| github\_app\_client\_secret | GitHub App Client Secret | `string` | n/a | yes |
+| github\_app\_client\_id\_ref | GitHub App Client ID (Secret Store reference) | <pre>object({<br>    ref     = string<br>    store   = string<br>    value   = string<br>    version = string<br>  })</pre> | n/a | yes |
+| github\_app\_client\_secret\_ref | GitHub App Client Secret (Secret Store reference) | <pre>object({<br>    ref     = string<br>    store   = string<br>    value   = string<br>    version = string<br>  })</pre> | n/a | yes |
 | github\_app\_id | GitHub App ID | `string` | n/a | yes |
-| github\_app\_private\_key | GitHub App Private Key | `string` | n/a | yes |
+| github\_app\_private\_key\_ref | GitHub App Private Key (Secret Store reference) | <pre>object({<br>    ref     = string<br>    store   = string<br>    value   = string<br>    version = string<br>  })</pre> | n/a | yes |
 | github\_org\_id | GitHub org id | `string` | n/a | yes |
-| github\_webhook\_secret | GitHub Webhook Secret | `string` | n/a | yes |
+| github\_webhook\_secret\_ref | GitHub Webhook Secret (Secret Store reference) | <pre>object({<br>    ref     = string<br>    store   = string<br>    value   = string<br>    version = string<br>  })</pre> | n/a | yes |
 | humanitec\_app\_id | Humanitec Application ID | `string` | n/a | yes |
-| humanitec\_ci\_service\_user\_token | Humanitec CI Service User Token | `string` | n/a | yes |
+| humanitec\_ci\_service\_user\_token\_ref | Humanitec CI Service User Token (Secret Store reference) | <pre>object({<br>    ref     = string<br>    store   = string<br>    value   = string<br>    version = string<br>  })</pre> | n/a | yes |
 | humanitec\_org\_id | Humanitec Organization ID | `string` | n/a | yes |
 <!-- END_TF_DOCS -->

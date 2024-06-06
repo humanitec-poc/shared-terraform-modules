@@ -2,29 +2,29 @@
 # Used cloud provider. Possible values: aws, azure, gcp
 cloud_provider = ""
 
-# GitHub App Client ID
-github_app_client_id = ""
+# GitHub App Client ID (Secret Store reference)
+github_app_client_id_ref = ""
 
-# GitHub App Client Secret
-github_app_client_secret = ""
+# GitHub App Client Secret (Secret Store reference)
+github_app_client_secret_ref = ""
 
 # GitHub App ID
 github_app_id = ""
 
-# GitHub App Private Key
-github_app_private_key = ""
+# GitHub App Private Key (Secret Store reference)
+github_app_private_key_ref = ""
 
 # GitHub org id
 github_org_id = ""
 
-# GitHub Webhook Secret
-github_webhook_secret = ""
+# GitHub Webhook Secret (Secret Store reference)
+github_webhook_secret_ref = ""
 
 # Humanitec Application ID
 humanitec_app_id = ""
 
-# Humanitec CI Service User Token
-humanitec_ci_service_user_token = ""
+# Humanitec CI Service User Token (Secret Store reference)
+humanitec_ci_service_user_token_ref = ""
 
 # Humanitec Organization ID
 humanitec_org_id = ""
