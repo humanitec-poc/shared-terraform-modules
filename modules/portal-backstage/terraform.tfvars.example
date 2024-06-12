@@ -1,4 +1,7 @@
 
+# Custom claim keys for the OIDC subject claim customization template
+backstage_repo_custom_claim_keys = ""
+
 # Backstage template owner
 backstage_template_owner = "humanitec-architecture"
 
