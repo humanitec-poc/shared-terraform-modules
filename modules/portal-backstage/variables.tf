@@ -84,3 +84,11 @@ variable "backstage_template_repository" {
   type        = string
   default     = "backstage"
 }
+
+# Required as Azure doesn't support wildcards in scopes https://github.com/Azure/azure-workload-identity/issues/373
+# More details in https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/about-security-hardening-with-openid-connect#customizing-the-token-claims
+variable "backstage_repo_custom_claim_keys" {
+  description = "Custom claim keys for the OIDC subject claim customization template"
+  type        = list(string)
+  default     = null
+}

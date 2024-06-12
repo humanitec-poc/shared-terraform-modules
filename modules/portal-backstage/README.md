@@ -14,6 +14,7 @@ This module deploys the [Humanitec Reference Architecture Backstage](https://git
 | github | ~> 5.38 |
 | humanitec | ~> 1.0 |
 | random | ~> 3.5 |
+| time | ~> 0.11 |
 
 ### Providers
 
@@ -21,12 +22,15 @@ This module deploys the [Humanitec Reference Architecture Backstage](https://git
 |------|---------|
 | github | ~> 5.38 |
 | humanitec | ~> 1.0 |
+| time | ~> 0.11 |
 
 ### Resources
 
 | Name | Type |
 |------|------|
+| [github_actions_repository_oidc_subject_claim_customization_template.backstage](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/actions_repository_oidc_subject_claim_customization_template) | resource |
 | [github_repository.backstage](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository) | resource |
+| [github_repository_file.re_deploy](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository_file) | resource |
 | [humanitec_value.backstage_cloud_provider](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/value) | resource |
 | [humanitec_value.backstage_github_app_client_id](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/value) | resource |
 | [humanitec_value.backstage_github_app_client_secret](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/value) | resource |
@@ -36,6 +40,7 @@ This module deploys the [Humanitec Reference Architecture Backstage](https://git
 | [humanitec_value.backstage_github_org_id](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/value) | resource |
 | [humanitec_value.backstage_humanitec_org](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/value) | resource |
 | [humanitec_value.backstage_humanitec_token](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/value) | resource |
+| [time_sleep.wait_after_claims_change](https://registry.terraform.io/providers/hashicorp/time/latest/docs/resources/sleep) | resource |
 
 ### Inputs
 
@@ -51,6 +56,7 @@ This module deploys the [Humanitec Reference Architecture Backstage](https://git
 | humanitec\_app\_id | Humanitec Application ID | `string` | n/a | yes |
 | humanitec\_ci\_service\_user\_token\_ref | Humanitec CI Service User Token (Secret Store reference) | <pre>object({<br>    ref     = optional(string)<br>    store   = optional(string)<br>    value   = optional(string)<br>    version = optional(string)<br>  })</pre> | n/a | yes |
 | humanitec\_org\_id | Humanitec Organization ID | `string` | n/a | yes |
+| backstage\_repo\_custom\_claim\_keys | Custom claim keys for the OIDC subject claim customization template | `list(string)` | `null` | no |
 | backstage\_template\_owner | Backstage template owner | `string` | `"humanitec-architecture"` | no |
 | backstage\_template\_repository | Backstage template repository | `string` | `"backstage"` | no |
 <!-- END_TF_DOCS -->
