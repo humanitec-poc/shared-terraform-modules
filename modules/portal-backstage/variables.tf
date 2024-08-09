@@ -76,7 +76,7 @@ variable "github_app_private_key_ref" {
 variable "backstage_template_owner" {
   description = "Backstage template owner"
   type        = string
-  default     = "humanitec-architecture"
+  default     = "humanitec-poc"
 }
 
 variable "backstage_template_repository" {
