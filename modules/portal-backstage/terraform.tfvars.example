@@ -3,7 +3,7 @@
 backstage_repo_custom_claim_keys = ""
 
 # Backstage template owner
-backstage_template_owner = "177908998"
+backstage_template_owner = "humanitec-poc"
 
 # Backstage template repository
 backstage_template_repository = "backstage"
