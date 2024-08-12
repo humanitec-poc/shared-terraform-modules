@@ -10,10 +10,10 @@ resource "github_repository" "backstage" {
 
   visibility = "public"
 
-  template {
-    owner      = var.backstage_template_owner
-    repository = var.backstage_template_repository
-  }
+ # template {
+ #   owner      = var.backstage_template_owner
+ #   repository = var.backstage_template_repository
+ # }
 }
 
 # Required as Azure doesn't support wildcards in scopes https://github.com/Azure/azure-workload-identity/issues/373
