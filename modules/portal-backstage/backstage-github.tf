@@ -10,6 +10,11 @@ resource "github_repository" "backstage" {
 
   visibility = "public"
 
+ template {
+    owner      = var.backstage_template_owner
+    repository = var.backstage_template_repository
+  }
+
 
 }
 
